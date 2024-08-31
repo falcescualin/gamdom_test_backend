@@ -3,7 +3,9 @@
   "editor.formatOnSave": true,
   "eslint.enable": true,
   "eslint.run": "onSave",
+  "files.autoSave": "onFocusChange",
   "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
