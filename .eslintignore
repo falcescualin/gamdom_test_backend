@@ -1,0 +1,4 @@
+/dist
+coverage
+logs
+yarn-error.log

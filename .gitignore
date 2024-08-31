@@ -1,0 +1,14 @@
+# Ignore node_modules
+node_modules/
+
+# Ignore coverage
+coverage/
+
+# Ignore build files from TypeScript
+/build
+
+# Ignore build files from Webpack
+/dist
+
+# Ignore local logs
+src/logs/**/*

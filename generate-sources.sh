@@ -1,0 +1,3 @@
+#!/bin/bash
+# npx swagger-typescript-api -r -p src/open-api-spec/ui-swagger.json -o src/generated --add-readonly --modular --clean-output --extract-enums --extract-request-params --extract-request-body --extract-response-body --extract-response-error --type-prefix UI --templates src/open-api-spec/generation-templates
+npx swagger-typescript-api -r -p src/open-api-spec/ui-swagger.json -o src/generated --add-readonly --modular --no-client --clean-output --extract-enums --extract-request-params --extract-request-body --extract-response-body --extract-response-error --type-prefix UI --templates src/open-api-spec/generation-templates
