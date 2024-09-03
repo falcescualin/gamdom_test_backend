@@ -4,14 +4,17 @@ import { Response } from 'express';
 import HttpError from '@classes/HttpError';
 import { RequestWithUser } from '@interfaces/auth.interface';
 import { logger } from '@logger/index';
-import { Event as EventModel } from '@models/event.model';
+import { EventService } from '@services/event.service';
 
 export class EventController {
+  private eventService: EventService;
+
+  constructor() {
+    this.eventService = EventService.getInstance();
+  }
   public getEvents = async (req: RequestWithUser, res: Response) => {
     try {
-      const events = await EventModel.findAll();
-
-      logger.info('Events retrieved', events);
+      const events = await this.eventService.getEvents();
 
       return res.status(HttpStatusCode.Ok).json({
         success: true,

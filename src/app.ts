@@ -48,7 +48,7 @@ class App {
   private connectToDatabase() {
     try {
       sequilizeInstance.authenticate();
-      sequilizeInstance.sync();
+      sequilizeInstance.sync({ force: false });
 
       logger.info('Connected to PostgreSQL database successfully');
     } catch (err) {
