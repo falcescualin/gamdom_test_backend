@@ -4,13 +4,19 @@ import { User as UserModel } from '@models/user.model';
 
 export const mockUsers = [
   {
-    id: '65c33f5659fe406430245074',
+    id: '166fbabf-e306-42ab-bc08-f7e01d1c403a',
+    email: 'falcescu.alin@gmail.com',
+    password: 'Test1234_',
+    role: UIRoles.SUPER_ADMIN,
+  },
+  {
+    id: 'c6dfa76e-1a28-40a9-97f4-2f8672ba62fa',
     email: 'falcescu.alin+SUPER_ADMIN@gmail.com',
     password: 'Test1234_',
     role: UIRoles.SUPER_ADMIN,
   },
   {
-    id: '65c33f5659fe406430245075',
+    id: '6022dd4e-3646-44db-8705-608279ad1346',
     email: 'falcescu.alin+USER@gmail.com',
     password: 'Test1234_',
     role: UIRoles.USER,

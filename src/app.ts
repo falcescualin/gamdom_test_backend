@@ -5,23 +5,14 @@ import express, { NextFunction, Response } from 'express';
 import helmet from 'helmet';
 import hpp from 'hpp';
 import morgan from 'morgan';
-import { Sequelize } from 'sequelize-typescript';
 
 import HttpError from '@classes/HttpError';
 import { APP_NAME, CREDENTIALS, LOG_FORMAT, NODE_ENV, ORIGIN, PORT } from '@config';
 import { Routes } from '@interfaces/routes.interface';
 import { logger, stream } from '@logger/index';
+import { initializeMockEvents } from '@mocks/event.mock';
 import { initializeMockUsers } from '@mocks/user.mock';
-
-const sequilizeInstance = new Sequelize({
-  database: process.env.DB_NAME,
-  username: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  host: process.env.DB_HOST,
-  port: Number(process.env.DB_PORT),
-  dialect: 'postgres',
-  models: [__dirname + '/models'], // Path to your models
-});
+import { sequilizeInstance } from 'db';
 
 class App {
   public app: express.Application;
@@ -57,6 +48,7 @@ class App {
   private connectToDatabase() {
     try {
       sequilizeInstance.authenticate();
+      sequilizeInstance.sync();
 
       logger.info('Connected to PostgreSQL database successfully');
     } catch (err) {
@@ -115,6 +107,7 @@ class App {
   private initializeUserMock() {
     if (this.env === 'dev') {
       initializeMockUsers();
+      initializeMockEvents();
     }
   }
 }

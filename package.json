@@ -1,7 +1,7 @@
 {
-  "name": "backend-generator",
+  "name": "gamdom_test",
   "version": "0.0.1",
-  "description": "A backend generator with express and typescript",
+  "description": "gamdom_test",
   "main": "src/index.ts",
   "author": "Falcescu Alin",
   "license": "MIT",

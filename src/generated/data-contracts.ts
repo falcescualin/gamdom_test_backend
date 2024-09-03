@@ -149,16 +149,6 @@ export interface UIRegisterCreatePayload {
 
 export type UIRegisterCreateError = UIGenericHttpError;
 
-export interface UIRefreshPasswordCreatePayload {
-  /** @format email */
-  email: string;
-}
-
-export interface UIInviteCreatePayload {
-  /** @format email */
-  email: string;
-}
-
 export interface UIUsersListParams {
   /**
    * Page number
@@ -212,4 +202,10 @@ export interface UIUsersDetailData {
   id?: string;
   username?: string;
   email?: string;
+}
+
+export interface IEvent {
+  event_id: string;
+  event_name: string;
+  odds: { win: number; draw: number; lose: number };
 }
